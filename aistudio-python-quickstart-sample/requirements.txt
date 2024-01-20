@@ -1,0 +1,15 @@
+# other app dependencies
+ipykernel
+
+# generative ai SDK dependencies
+azure-ai-generative[evaluate,index,promptflow]
+
+# hardcoded the version of azureml-mlflow here for faster Docker image building speed
+azureml-mlflow==1.53.0
+pytest
+
+# langchain dependencies, these should be optional in the future
+# langchain moved Embeddings from langchain.embeddings.base to langchain.schema.embeddings while azureml-rag is still referencing it.
+# once azureml-rag fixes, we should remove the langchain reference from this file
+langchain==0.0.324
+semantic-kernel
